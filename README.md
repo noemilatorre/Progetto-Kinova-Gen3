@@ -14,7 +14,7 @@ L'obiettivo è implementare e testare un **controllore di cinematica inversa** c
 
 ---
 ## Traiettoria desiderata
-![image](https://github.com/user-attachments/assets/e055772a-ed1b-436a-9ab4-45c34f6d1ae1 | width=100)
+![image](https://github.com/user-attachments/assets/e055772a-ed1b-436a-9ab4-45c34f6d1ae1|width=100)
 
 ---
 
