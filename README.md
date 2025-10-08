@@ -75,7 +75,7 @@ Utilizza la **pseudoinversa smorzata** per ottimizzare il movimento, rispettare 
 3.  **Esegui lo script:**
     - Apri MATLAB e naviga nella cartella del progetto.
     - Esegui lo script in cui è presente un flag per i 4 casi
-      ```
+    
 
 ---
 
