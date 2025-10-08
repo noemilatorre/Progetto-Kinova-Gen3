@@ -1,61 +1,94 @@
-# Progetto-Kinova-Gen3
+# Controllo Cinematico del Robot Kinova Gen3
 
-## Descrizione  
-Questo progetto riguarda il controllo del robot **Kinova Gen3**, un braccio robotico a **7 gradi di libertà**, utilizzando **MATLAB**.  
-L'obiettivo è implementare e testare un **controllore di cinematica inversa** con obiettivi differenti.  
+[![MATLAB](https://img.shields.io/badge/MATLAB-R2023b-orange?logo=mathworks)](https://www.mathworks.com/)
+[![Robotics](https://img.shields.io/badge/Robotics-Kinova%20Gen3-blue)](https://www.kinovarobotics.com/)
+[![Status](https://img.shields.io/badge/Status-Completed-success)]()
 
----
-
-## Obiettivi del progetto  
-- **Caso 1:** Controllo solo posizione dell'end-effector senza considerare l'orientamento.  
-- **Caso 2:** Controllo della posizione con orientamento costante.  
-- **Caso 3:** Controllo della posizione con orientamento variabile (asse Z dell'ee sempre rivolto al centro della traiettoria).  
-- **Caso 4:** Ottimizzazione con ridondanza per rispettare i limiti di giunto e tornare alla configurazione iniziale.  
+Un progetto MATLAB per l'implementazione e il testing di un **controllore di cinematica inversa** per il braccio robotico Kinova Gen3 (7 DoF). Il progetto esplora diverse strategie di controllo per il tracking di traiettorie, dalla gestione della posizione fino all'ottimizzazione della ridondanza.
 
 ---
-## Traiettoria desiderata
+
+## Panoramica
+
+Questo progetto implementa in MATLAB un controllore cinematico per il robot **Kinova Gen3**. L'obiettivo è far sì che l'end-effector del robot segua una traiettoria complessa, composta da segmenti rettilinei e una semicirconferenza, rispettando diversi vincoli di orientamento e ottimizzazione.
+
+**Traiettoria Desiderata:**
 <center>
-<img src="https://github.com/user-attachments/assets/e055772a-ed1b-436a-9ab4-45c34f6d1ae1" width=300>
+<img src="https://github.com/user-attachments/assets/e055772a-ed1b-436a-9ab4-45c34f6d1ae1" width="300" alt="Diagramma della Traiettoria">
 </center>
 
+---
+
+## Obiettivi del Progetto
+
+Il progetto è suddiviso in quattro casi di studio progressivi:
+
+| Caso | Obiettivo | Complessità |
+|:----:|-----------|-------------|
+| **1** | Controllo della sola **posizione** dell'end-effector. | 
+| **2** | Controllo di posizione con **orientamento costante**. | 
+| **3** | Controllo di posizione con **orientamento variabile** (asse Z punta al centro della traiettoria). | 
+| **4** | **Ottimizzazione** con ridondanza per rispettare i limiti di giunto. | 
 
 ---
 
-## Casi di Studio e Risultati  
+## Tecnologie e Strumenti
 
-### Caso 1: Controllo della posizione  
-Il robot segue una traiettoria composta da:  
-1️. Un primo segmento rettilineo  
-2️. Una semicirconferenza verticale  
-3️. Un secondo segmento per tornare alla posizione iniziale  
-
-![image](https://github.com/user-attachments/assets/5eb3a7b8-4f60-4795-9b6a-2bac86539014)
-  
+- **Linguaggio:** MATLAB
+- **Robot:** Kinova Gen3 (7 DoF) in simulazione, Jaco (7 DoF in laboratorio)
+- **Tecniche:** Cinematica Inversa, Quaternioni, Pseudoinversa Smorzata, Ottimizzazione della Ridondanza
+- **Strumenti:** MATLAB Robotics System Toolbox
 
 ---
 
-### Caso 2: Controllo della posizione e orientamento costante  
-- L'orientamento iniziale di 45° viene mantenuto lungo tutta la traiettoria.  
-- La rotazione è implementata usando **quaternioni**.  
+## Risultati e Casi di Studio
 
-![image](https://github.com/user-attachments/assets/b3bee8dd-4172-412b-bbf9-bdacf6ce3bbc)
- 
+### Caso 1: Controllo della Posizione
+Il robot segue la traiettoria senza vincoli sull'orientamento.
+![Risultato Caso 1](https://github.com/user-attachments/assets/5eb3a7b8-4f60-4795-9b6a-2bac86539014)
 
----
+### Caso 2: Posizione + Orientamento Costante
+Mantiene un orientamento fisso di 45° lungo l'intera traiettoria, utilizzando **quaternioni** per il calcolo della rotazione.
+![Risultato Caso 2](https://github.com/user-attachments/assets/b3bee8dd-4172-412b-bbf9-bdacf6ce3bbc)
 
-### Caso 3: Controllo della posizione e orientamento variabile  
-- Durante il tratto semicircolare, l'asse **Z dell'end-effector** punta sempre verso il centro della traiettoria.  
-- La rotazione viene calcolata usando la funzione **Rot2AxisAngle**.  
+### Caso 3: Posizione + Orientamento Variabile
+Nella fase semicircolare, l'asse Z dell'end-effector è sempre rivolto verso il centro della traiettoria (implementato con `Rot2AxisAngle`).
+![Risultato Caso 3](https://github.com/user-attachments/assets/a948569a-8134-4a69-a744-79d96105df7e)
 
-![image](https://github.com/user-attachments/assets/a948569a-8134-4a69-a744-79d96105df7e)
-  
-
----
-
-### Caso 4: Ottimizzazione con ridondanza  
-- L'algoritmo ottimizza il movimento per rispettare i **limiti di giunto** e tornare alla configurazione iniziale.  
-- L'ottimizzazione viene gestita con la **pseudoinversa smorzata**.  
-
+### Caso 4: Ottimizzazione con Ridondanza
+Utilizza la **pseudoinversa smorzata** per ottimizzare il movimento, rispettare i limiti fisici dei giunti e tornare alla configurazione iniziale.
 
 ---
 
+## Come Usare il Codice
+
+1.  **Prerequisiti:**
+    - Avere MATLAB installato (consigliata R2023b o superiore).
+    - Assicurarsi che il Robotics System Toolbox sia installato.
+
+2.  **Clona il repository:**
+    ```bash
+    git clone https://github.com/noemilatorre/Progetto-Kinova-Gen3.git
+    cd Progetto-Kinova-Gen3
+    ```
+
+3.  **Esegui gli script:**
+    - Apri MATLAB e naviga nella cartella del progetto.
+    - Esegui i singoli script per caso di studio:
+      ```matlab
+      run('Caso1_ControlloPosizione.m');
+      ```
+
+---
+
+## 👤 Contatti
+
+**Noemi La Torre**
+
+- 📧 Email: latorre.noemi17@gmail.com
+- 💼 LinkedIn: [linkedin.com/noemi-la-torre](https://www.linkedin.com/in/noemi-la-torre)
+- 🐙 GitHub: [github.com/noemilatorre](https://github.com/noemilatorre)
+- 🌐 Portfolio: [noemilatorre.github.io](https://noemilatorre.github.io)
+
+---
+*Questo progetto è stato sviluppato come parte del corso di Sistemi Robotici e Robotica Applicata presso l'Università degli Studi di Cassino e del Lazio Meridionale.*
