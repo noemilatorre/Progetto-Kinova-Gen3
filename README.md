@@ -63,8 +63,8 @@ Utilizza la **pseudoinversa smorzata** per ottimizzare il movimento, rispettare 
 ## Come Usare il Codice
 
 1.  **Prerequisiti:**
-    - Avere MATLAB installato (consigliata R2023b o superiore).
-    - Assicurarsi che il Robotics System Toolbox sia installato.
+    - MATLAB installato (consigliata R2023b o superiore).
+    - Robotics System Toolbox sia installato.
 
 2.  **Clona il repository:**
     ```bash
@@ -73,8 +73,8 @@ Utilizza la **pseudoinversa smorzata** per ottimizzare il movimento, rispettare 
     ```
 
 3.  **Esegui lo script:**
-    - Apri MATLAB e naviga nella cartella del progetto.
-    - Esegui lo script in cui è presente un flag per i 4 casi
+    - Aprire MATLAB e navigare nella cartella del progetto.
+    - Eseguire lo script in cui è presente un flag per i 4 casi
     
 
 ---
