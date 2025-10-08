@@ -89,4 +89,4 @@ Utilizza la **pseudoinversa smorzata** per ottimizzare il movimento, rispettare 
 - Portfolio: [noemilatorre.github.io](https://noemilatorre.github.io)
 
 ---
-*Questo progetto è stato sviluppato come parte del corso di Sistemi Robotici e Robotica Applicata presso l'Università degli Studi di Cassino e del Lazio Meridionale.*
+*Questo progetto è stato sviluppato come parte del corso di Sistemi Robotici presso l'Università degli Studi di Cassino e del Lazio Meridionale.*
