@@ -23,8 +23,8 @@ Questo progetto implementa in MATLAB un controllore cinematico per il robot **Ki
 
 Il progetto è suddiviso in quattro casi di studio progressivi:
 
-| Caso | Obiettivo | Complessità |
-|:----:|-----------|-------------|
+| Caso | Obiettivo | 
+|:----:|-----------|
 | **1** | Controllo della sola **posizione** dell'end-effector. | 
 | **2** | Controllo di posizione con **orientamento costante**. | 
 | **3** | Controllo di posizione con **orientamento variabile** (asse Z punta al centro della traiettoria). | 
@@ -72,23 +72,21 @@ Utilizza la **pseudoinversa smorzata** per ottimizzare il movimento, rispettare 
     cd Progetto-Kinova-Gen3
     ```
 
-3.  **Esegui gli script:**
+3.  **Esegui lo script:**
     - Apri MATLAB e naviga nella cartella del progetto.
-    - Esegui i singoli script per caso di studio:
-      ```matlab
-      run('Caso1_ControlloPosizione.m');
+    - Esegui lo script in cui è presente un flag per i 4 casi
       ```
 
 ---
 
-## 👤 Contatti
+## Contatti
 
 **Noemi La Torre**
 
-- 📧 Email: latorre.noemi17@gmail.com
-- 💼 LinkedIn: [linkedin.com/noemi-la-torre](https://www.linkedin.com/in/noemi-la-torre)
-- 🐙 GitHub: [github.com/noemilatorre](https://github.com/noemilatorre)
-- 🌐 Portfolio: [noemilatorre.github.io](https://noemilatorre.github.io)
+- Email: latorre.noemi17@gmail.com
+- LinkedIn: [linkedin.com/noemi-la-torre](https://www.linkedin.com/in/noemi-la-torre)
+- GitHub: [github.com/noemilatorre](https://github.com/noemilatorre)
+- Portfolio: [noemilatorre.github.io](https://noemilatorre.github.io)
 
 ---
 *Questo progetto è stato sviluppato come parte del corso di Sistemi Robotici e Robotica Applicata presso l'Università degli Studi di Cassino e del Lazio Meridionale.*
